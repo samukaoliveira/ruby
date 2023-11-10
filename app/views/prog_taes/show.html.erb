@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @prog_tae %>
+
+<div>
+  <%= link_to "Edit this prog tae", edit_prog_tae_path(@prog_tae) %> |
+  <%= link_to "Back to prog taes", prog_taes_path %>
+
+  <%= button_to "Destroy this prog tae", @prog_tae, method: :delete %>
+</div>

@@ -1,0 +1,87 @@
+<%= form_with(model: prog_tae) do |form| %>
+  <% if prog_tae.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(prog_tae.errors.count, "error") %> prohibited this prog_tae from being saved:</h2>
+
+      <ul>
+        <% prog_tae.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :siape, style: "display: block" %>
+    <%= form.number_field :siape %>
+  </div>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :portaria, style: "display: block" %>
+    <%= form.number_field :portaria %>
+  </div>
+
+  <div>
+    <%= form.label :classe, style: "display: block" %>
+    <%= form.text_field :classe %>
+  </div>
+
+  <div>
+    <%= form.label :nivel_padrao_atual, style: "display: block" %>
+    <%= form.number_field :nivel_padrao_atual %>
+  </div>
+
+  <div>
+    <%= form.label :nivel_padrao_novo, style: "display: block" %>
+    <%= form.number_field :nivel_padrao_novo %>
+  </div>
+
+  <div>
+    <%= form.label :inicio_prog, style: "display: block" %>
+    <%= form.date_field :inicio_prog %>
+  </div>
+
+  <div>
+    <%= form.label :fim_prog, style: "display: block" %>
+    <%= form.date_field :fim_prog %>
+  </div>
+
+  <div>
+    <%= form.label :iq_atual, style: "display: block" %>
+    <%= form.number_field :iq_atual %>
+  </div>
+
+  <div>
+    <%= form.label :iq_novo, style: "display: block" %>
+    <%= form.number_field :iq_novo %>
+  </div>
+
+  <div>
+    <%= form.label :anuenio, style: "display: block" %>
+    <%= form.number_field :anuenio %>
+  </div>
+
+  <div>
+    <%= form.label :insalubridade, style: "display: block" %>
+    <%= form.check_box :insalubridade %>
+  </div>
+
+  <div>
+    <%= form.label :medico, style: "display: block" %>
+    <%= form.check_box :medico %>
+  </div>
+
+  <div>
+    <%= form.label :venc_basico_comp, style: "display: block" %>
+    <%= form.text_field :venc_basico_comp %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

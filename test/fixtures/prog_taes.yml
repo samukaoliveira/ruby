@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  siape: 1
+  nome: MyString
+  portaria: 1
+  classe: MyString
+  nivel_padrao_atual: 1
+  nivel_padrao_novo: 1
+  inicio_prog: 2023-11-10
+  fim_prog: 2023-11-10
+  iq_atual: 1
+  iq_novo: 1
+  anuenio: 1
+  insalubridade: false
+  medico: false
+  venc_basico_comp: 1.5
+
+two:
+  siape: 1
+  nome: MyString
+  portaria: 1
+  classe: MyString
+  nivel_padrao_atual: 1
+  nivel_padrao_novo: 1
+  inicio_prog: 2023-11-10
+  fim_prog: 2023-11-10
+  iq_atual: 1
+  iq_novo: 1
+  anuenio: 1
+  insalubridade: false
+  medico: false
+  venc_basico_comp: 1.5
