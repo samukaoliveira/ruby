@@ -23,5 +23,9 @@ module Sepab
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+      config.content_security_policy do |policy|
+        policy.default_src :self, :https
+        # Adicione outras diretivas conforme necessário
+      end
   end
 end

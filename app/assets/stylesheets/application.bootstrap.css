@@ -1,0 +1,42 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+.fixo1{
+    width:4.5%;
+}
+
+.fixo2{
+    width: 18%;
+}
+
+.fixo3{
+    width: 8%;
+}
+
+.fixo4{
+    width: 5%;
+}
+
+.fixo5{
+    width: 6%;
+}
+
+.fixo6{
+    width: 5.5%;
+}
+
+.crud{
+    width: 6%;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+}
+
+
+.bi-pencil-square{
+    font-size: 30px;
+}
+
+.btn-danger{
+    font-size: 30px;
+}

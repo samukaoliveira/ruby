@@ -1,72 +1,88 @@
-<div id="<%= dom_id prog_tae %>">
-  <p>
-    <strong>Siape:</strong>
-    <%= prog_tae.siape %>
-  </p>
+<div id="<%= dom_id prog_tae %>" class="table-responsive-sm">
+  <tbody>
+    <table id="view_progs" class="table table-striped table-clean table-bordered table-hover">
+      <tr>
+        <td class="fixo5">
+          <%= prog_tae.siape %>
+        </td>
 
-  <p>
-    <strong>Nome:</strong>
-    <%= prog_tae.nome %>
-  </p>
+        <td class="fixo2">
+          <%= prog_tae.nome %>  
+        </td>
 
-  <p>
-    <strong>Portaria:</strong>
-    <%= prog_tae.portaria %>
-  </p>
+        <td class="fixo6">
+          <%= prog_tae.portaria %>
+        </td>
 
-  <p>
-    <strong>Classe:</strong>
-    <%= prog_tae.classe %>
-  </p>
+        <td class="fixo1">
+          <%= prog_tae.classe %>
+        </td>
 
-  <p>
-    <strong>Nivel padrao atual:</strong>
-    <%= prog_tae.nivel_padrao_atual %>
-  </p>
+        <td class="fixo1">
+          <%= prog_tae.nivel_padrao_atual %>
+        </td>
 
-  <p>
-    <strong>Nivel padrao novo:</strong>
-    <%= prog_tae.nivel_padrao_novo %>
-  </p>
+        <td class="fixo1">
+          <%= prog_tae.nivel_padrao_novo %>
+        </td>
 
-  <p>
-    <strong>Inicio prog:</strong>
-    <%= prog_tae.inicio_prog %>
-  </p>
+        <td class="fixo3">
+          <%= prog_tae.inicio_prog %>
+        </td>
 
-  <p>
-    <strong>Fim prog:</strong>
-    <%= prog_tae.fim_prog %>
-  </p>
+        <td class="fixo3">
+          <%= prog_tae.fim_prog %>
+        </td>
 
-  <p>
-    <strong>Iq atual:</strong>
-    <%= prog_tae.iq_atual %>
-  </p>
+        <td class="fixo1">
+          <%= prog_tae.iq_atual %>
+        </td>
 
-  <p>
-    <strong>Iq novo:</strong>
-    <%= prog_tae.iq_novo %>
-  </p>
+        <td class="fixo1">
+          <%= prog_tae.iq_novo %>
+        </td>
 
-  <p>
-    <strong>Anuenio:</strong>
-    <%= prog_tae.anuenio %>
-  </p>
+        <td class="fixo4">
+          <%= prog_tae.anuenio %>
+        </td>
 
-  <p>
-    <strong>Insalubridade:</strong>
-    <%= prog_tae.insalubridade %>
-  </p>
+        <td class="fixo4">
+          <%= prog_tae.insalubridade %>
+        </td>
 
-  <p>
-    <strong>Medico:</strong>
-    <%= prog_tae.medico %>
-  </p>
+        <td class="fixo4">
+          <%= prog_tae.medico %>
+        </td>
 
-  <p>
-    <strong>Venc basico comp:</strong>
-    <%= prog_tae.venc_basico_comp %>
-  </p>
+        <td class="fixo4">
+          <%= prog_tae.venc_basico_comp %>
+        </td>
 
+        <td class="crud">
+          <span>
+          <%= link_to "", edit_prog_tae_path(prog_tae),
+            class: "bi bi-pencil-square" %>
+          </span>
+        </td>
+
+        <td class="crud">
+          <span><%= link_to "", prog_tae, 
+            method: :delete, 
+            data: {confirm: "Tem certeza que deseja excluir este registro?"},
+            class: "btn btn-danger bi bi-trash"%></span>
+
+        <td class="crud">
+          <span><%= button_to "", prog_tae, 
+            class: "btn btn-info bi bi-play-btn"%></span>
+        </td>
+
+        <td class="crud">
+          <span><%= button_to "", prog_tae, 
+            class: "btn btn-success bi bi-filetype-xls"%></span>
+        </td>
+      </tr>
+    </table>
+  </tbody>
 </div>
+
+<div></div>

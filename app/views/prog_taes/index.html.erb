@@ -3,12 +3,92 @@
 <h1>Prog taes</h1>
 
 <div id="prog_taes">
+  <tbody>
+    <table id="label_prog" class="table table-striped table-dark table-bordered">
+      <thead>
+        <tr>
+          <th class="fixo5">
+            <strong>Siape</strong>
+          </th>
+
+          <th class="fixo2">
+            <strong>Nome</strong>
+          </th>
+
+          <th class="fixo6">
+            <strong>Port.</strong>
+          </th>
+
+          <th class="fixo1">
+            <strong>Classe</strong>
+          </th>
+
+          <th class="fixo1">
+            <strong>Atual</strong>
+          </th>
+
+          <th class="fixo1">
+            <strong>Novo</strong>
+          </th>
+
+          <th class="fixo3">
+            <strong>Inicio</strong>
+          </th>
+
+          <th class="fixo3">
+            <strong>Fim</strong>
+          </th>
+
+          <th class="fixo1">
+            <strong>Iq atual</strong>
+          </th>
+
+          <th class="fixo1">
+            <strong>Iq novo</strong>
+          </th>
+
+          <th class="fixo4">
+            <strong>Anuen.</strong>
+          </th>
+
+          <th class="fixo4">
+            <strong>Insal.</strong>
+          </th>
+
+          <th class="fixo4">
+            <strong>Medico</strong>
+          </th>
+
+          <th class="fixo4">
+            <strong>V.B. Comp</strong>
+          </th>
+
+          <th class="crud">
+            <strong>Editar</strong>
+          </th>
+
+          <th class="crud">
+            <strong>Apagar</strong>
+          </th>
+
+          <th class="crud">
+            <strong>Macro</strong>
+          </th>
+
+          <th class="crud">
+            <strong>Planilha</strong>
+          </th>
+        </tr>
+      </thead>
+    </table>
+    </tbody>
   <% @prog_taes.each do |prog_tae| %>
     <%= render prog_tae %>
     <p>
-      <%= link_to "Show this prog tae", prog_tae %>
+      
     </p>
   <% end %>
 </div>
-
+<div>
 <%= link_to "New prog tae", new_prog_tae_path %>
+</div>

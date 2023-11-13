@@ -4,6 +4,7 @@ ruby "3.0.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
+gem 'sassc-rails', '2.1.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -23,8 +24,19 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+#Bootstrap
+gem 'bootstrap', '~> 5.3.2'
+
+#JQuery
+gem 'jquery-rails'
+
+gem "foreman", github: "ddollar/foreman"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
