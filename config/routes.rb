@@ -8,6 +8,19 @@ Rails.application.routes.draw do
 
   get "progtae" => "prog_taes#index"
 
+  get "home" => "home#index"
+
+  get "formatadl" => "formata_dl#index"
+
+  get "cainprogma" => "cainprogma#index"
+
+  get "cofichaf" => "cofichaf#index"
+
+  get "calculo" => "calculo#index"
+
+  get "autorizar" => "autorizar#index"
+
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

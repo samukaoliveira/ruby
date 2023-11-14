@@ -1,0 +1,79 @@
+<%= render "layouts/header" %>
+
+<br><br>
+
+    <header>
+	
+
+<textarea id="ta" style="height: 170px">
+</textarea><input type="button" value="Formata e copia DL" onclick="formataDl()">
+
+<div id="dv"></div>
+<br><br>
+<div id="copia" style="width: 200px;"></div>
+
+<br><br><br><br>
+
+
+<script type="text/javascript">
+        
+        
+        
+    function formataDl(){
+
+        const stringDl = document.getElementById('ta').value;
+        
+        var a = stringDl.substring(0, 70);
+        var b = stringDl.substring(70, 140);
+        var c = stringDl.substring(140, 210);
+        var d = stringDl.substring(210, 280);
+        var e = stringDl.substring(280, 350);
+        var f = stringDl.substring(350, 420);
+        var g = stringDl.substring(420, 490);
+        var h = stringDl.substring(490, 560);
+        var i = stringDl.substring(560, 630);
+        var j = stringDl.substring(630);
+             
+        
+        
+        const formatado = a+"<br>"+b+"<br>"+c+"<br>"+d+"<br>"+e+"<br>"+f+"<br>"+g+"<br>"+h+"<br>"+i+"<br>"+j;
+
+
+         document.getElementById('dv').innerHTML = formatado;
+
+         const copia = document.getElementById('dv');
+
+         navigator.clipboard.writeText(copia.innerText);
+
+         //document.getElementById('copia').innerHTML = '<button id="copiar" width="100px" value="Copiar" onclick="copiaTexto();"><label for "copiar">Copiar texto</label></button>';
+    }
+
+/*
+    function copiaTexto(){
+
+const texto = document.getElementById('dv').value;
+
+        var a = texto.substring(0, 70);
+        var b = texto.substring(70, 140);
+        var c = texto.substring(140, 210);
+        var d = texto.substring(210, 280);
+        var e = texto.substring(280, 350);
+        var f = texto.substring(350, 420);
+        var g = texto.substring(420, 490);
+        var h = texto.substring(490, 560);
+        var i = texto.substring(560, 630);
+        var j = texto.substring(630);
+             
+        
+        
+        
+         document.getElementById('dv').innerHTML = a+" \n"+b+" \n"+c+" \n"+d+" \n"+e+" \n"+f+" \n"+g+" \n"+h+" \n"+i+" \n"+j;
+
+navigator.clipboard.writeText(texto.innerHTML);
+    }
+ */   
+
+</script>        
+
+
+<%= render "layouts/footer" %>

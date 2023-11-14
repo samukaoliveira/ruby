@@ -1,0 +1,945 @@
+<%= render "layouts/header" %>
+
+<br><br>
+        
+
+        <form name="calcular" method="post" action="">
+            
+            <h3>Macro de Ficha mensal (FPCOFICHAF)<span style="color:rgb(45, 189, 1);"> - V2 (salva o PDF automaticamente)</span></h3>
+            <h4 style="color:rgb(255, 10, 1);">Orientações para rodar a macro:</h4>
+            <span>1 - Instale o Módulo "Real User" no UI Vision (para funcionar as teclas de atalho do e-Siape, F3, F12, etc)</span>
+            <a href="https://ui.vision/rpa/x">Baixe aqui</a><br>
+            <span>2 - Configure a impressora padrão do Windows para PDF</span><br>
+            <span>3 - Configure a impressão do Google Chrome para a Escala de 70% (para não cortar o total bruto e líquido do contracheque)</span><br><br>
+
+            
+            <label for="siape">Copie e cole aqui as SIAPEs do Excel</label><BR>
+                <textarea id="control_v" style="width: 450px; height: 230px"  size="1480" maxlength="1480" name="siapes" placeholder="Copie e cola aqui as SIAPEs do Excel" >
+                </textarea><br>
+           			
+            <input type="button" value="Inserir Matrículas" onclick="insereMats();"><br>
+            
+            <label for="mes">Mês:</label>
+			<select id="mes" name="mes">
+                <option value="1">Janeiro</option>                           
+                <option value="2">Fevereiro</option>                           
+                <option value="3">Março</option>                           
+                <option value="4">Abril</option>                           
+                <option value="5">Maio</option>                           
+                <option value="6">Junho</option>                           
+                <option value="7">Julho</option>                           
+                <option value="8">Agosto</option>                           
+                <option value="9">Setembro</option>                           
+                <option value="10">Outubro</option>                           
+                <option value="11">Novembro</option>                           
+                <option value="12">Dezembro</option>   
+            </select>
+            <br><br>
+			
+            
+            
+			<label for="siape">Confira se as SIAPEs estão OK e clique em Gerar Macro.</label><BR>
+            <table>
+                <th style="width:30px;" name="siape" id="siape">Siape</th>
+                <th style="width:60px;"  name="nome" id="nome">Nome</th>
+                <th style="width:30px;" name="siape" id="siape">Siape</th>
+                <th style="width:60px;"  name="nome" id="nome">Nome</th>
+             <tr>
+            <td><input type="text" size="7" maxlength="7" name="siape0" id="0" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome0" id="nome0"  value""></td>
+            <td><input type="text" size="7" maxlength="7" name="siape1" id="1" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome1" id="nome1"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape2" id="2" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome2" id="nome2"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape3" id="3" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome3" id="nome3"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape4" id="4" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome4" id="nome4"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape5" id="5" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome5" id="nome5"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape6" id="6" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome6" id="nome6"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape7" id="7" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome7" id="nome7"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape8" id="8" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome8" id="nome8"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape9" id="9" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome9" id="nome9"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape10" id="10" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome10" id="nome10"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape11" id="11" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome11" id="nome11"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape12" id="12" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome12" id="nome12"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape13" id="13" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome13" id="nome13"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape14" id="14" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome14" id="nome14"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape15" id="15" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome15" id="nome15"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape16" id="16" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome16" id="nome16"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape17" id="17" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome17" id="nome17"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape18" id="18" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome18" id="nome18"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape19" id="19" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome19" id="nome19"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape20" id="20" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome20" id="nome20"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape21" id="21" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome21" id="nome21"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape22" id="22" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome22" id="nome22"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape23" id="23" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome23" id="nome23"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape24" id="24" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome24" id="nome24"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape25" id="25" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome25" id="nome25"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape26" id="26" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome26" id="nome26"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape27" id="27" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome27" id="nome27"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape28" id="28" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome28" id="nome28"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape29" id="29" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome29" id="nome29"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape30" id="30" value""></td>
+			<td><input type="text" size="35" maxlength="50" name="nome30" id="nome30"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape31" id="31" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome31" id="nome31"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape32" id="32" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome32" id="nome32"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape33" id="33" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome33" id="nome33"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape34" id="34" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome34" id="nome34"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape35" id="35" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome35" id="nome35"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape36" id="36" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome36" id="nome36"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape37" id="37" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome37" id="nome37"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape38" id="38" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome38" id="nome38"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape39" id="39" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome39" id="nome39"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape40" id="40" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome40" id="nome40"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape41" id="41" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome41" id="nome41"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape42" id="42" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome42" id="nome42"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape43" id="43" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome43" id="nome43"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape44" id="44" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome44" id="nome44"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape45" id="45" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome45" id="nome45"  value""></td>
+        </tr><tr>
+            <td><input type="text" size="7" maxlength="7" name="siape46" id="46" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome46" id="nome46"  value""></td>
+			<td><input type="text" size="7" maxlength="7" name="siape47" id="47" value""></td>
+            <td><input type="text" size="35" maxlength="50" name="nome47" id="nome47"  value""></td>
+        </tr>
+        </table>
+            
+        </form><script type="text/javascript">
+
+            const hoje = new Date();
+            const mesCorrente = hoje.getMonth(); 
+            document.getElementById("mes").value = mesCorrente - 1;
+        
+            </script>
+        <br><br>
+		
+		     
+        <input type="button" value="Gerar Macro - Selenium IDE" onclick="geraMacroSelenium();">
+        <input type="button" value="Gerar Macro - UI Vision RPA" onclick="geraMacroUIVision();">
+        
+		   <br><br><br><br>
+    
+	<script src="FileSaver.js"></script>
+	<script src="jquery-1.5.2.min.js"></script>
+		<script src="jquery.maskedinput-1.3.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	
+	function insereMats(){
+	
+	    var control_c = document.getElementById("control_v").value;
+	var control_v = control_c.split("\t");
+	
+	var siape = new Array();
+	var nome = new Array();
+        		
+	var col=0;
+	var lin=0;
+		
+	while (lin <= 30){
+
+    siape[lin] = control_v[col];
+    document.getElementById(lin).value = siape[lin];
+    col++;
+
+	nome[lin] = control_v[col];
+    var map={"â":"a","Â":"A","à":"a","À":"A","á":"a","Á":"A","ã":"a","Ã":"A","ê":"e","Ê":"E","è":"e","È":"E","é":"e","É":"E","î":"i","Î":"I","ì":"i","Ì":"I","í":"i","Í":"I","õ":"o","Õ":"O","ô":"o","Ô":"O","ò":"o","Ò":"O","ó":"o","Ó":"O","ü":"u","Ü":"U","û":"u","Û":"U","ú":"u","Ú":"U","ù":"u","Ù":"U","ç":"c","Ç":"C"};
+
+    function removerAcentos(s){ return s.replace(/[\W\[\] ]/g,function(a){return map[a]||a}) };
+
+
+    document.getElementById("nome"+lin).value = removerAcentos(nome[lin]);
+    col++;
+    lin++;	
+	
+	//cria a div das rubricas
+    
+    }
+	
+	}
+	
+    
+    function geraMacroSelenium(){
+        
+
+var i = 1;
+var i2 = 1;
+var f = 0;
+var siape = new Array();
+var mesSelect = document.getElementById("mes").value;
+var mesMacro = '';
+
+        if (mesSelect == 1){
+            mesMacro = 'Janeiro';
+        }
+        if (mesSelect == 2){
+            mesMacro = 'fevereiro';
+        }
+        if (mesSelect == 3){
+            mesMacro = 'Marco';
+        }
+        if (mesSelect == 4){
+            mesMacro = 'Abril';
+        }
+        if (mesSelect == 5){
+            mesMacro = 'Maio';
+        }
+        if (mesSelect == 6){
+            mesMacro = 'Junho';
+        }
+        if (mesSelect == 7){
+            mesMacro = 'Julho';
+        }
+        if (mesSelect == 8){
+            mesMacro = 'Agosto';
+        }
+        if (mesSelect == 9){
+            mesMacro = 'Setembro';
+        }
+        if (mesSelect == 10){
+            mesMacro = 'Outubro';
+        }
+        if (mesSelect == 11){
+            mesMacro = 'Novembro';
+        }
+        if (mesSelect == 12){
+            mesMacro = 'Dezembro';
+        }
+
+//pega o valor dos atrasados de vencimento e soma ao valor total de V.B.
+
+while ((document.getElementById(i2).value > 0) && (i2 < 61)){
+	f++;
+	i2++;
+	}
+ 
+	
+var macro = '{ \n '+
+'  "id": "a915d103-b5ac-4874-8c18-cdac1'+document.getElementById(i).value+'", \n '+
+'  "version": "2.0", \n '+
+'  "name": "cofichaf2", \n '+
+'  "url": "https://esiape.sigepe.gov.br", \n '+
+'  "tests": [{ \n '+
+'    "id": "bfc243c7-7aa5-453b-a7ad-68bae'+document.getElementById(i).value+'", \n '+
+'    "name": "", \n '+
+'    "commands": [{ \n '+
+'      "id": "19240492-9906-4535-a34e-830e5'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "open", \n '+
+'      "target": "/modsiape/servlet/StartCISPage?PAGEURL=/cisnatural/NatLogon.html&xciParameters.natsession=modsiape", \n '+
+'      "targets": [], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "c3cbeab4-62ee-44ca-bdea-5aa8f'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "setWindowSize", \n '+
+'      "target": "1000x768", \n '+
+'      "targets": [], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "a80ad55d-5aea-49d7-bf37-f780a'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "index=1", \n '+
+'      "targets": [ \n '+
+'        ["index=1"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "856ac709-b4b4-42ed-b3e3-8b7f9'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=B_13", \n '+
+'      "targets": [ \n '+
+'        ["id=B_13", "id"], \n '+
+'        ["name=CC", "name"], \n '+
+'        ["css=#B_13", "css:finder"], \n '+
+'        ["xpath=//button[@id=\'B_13\']", "xpath:attributes"], \n '+
+'        ["xpath=//td[@id=\'TDB13\']/button", "xpath:idRelative"], \n '+
+'        ["xpath=//button", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "26ac063f-4cb5-4686-b99c-8aba0'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "relative=parent", \n '+
+'      "targets": [ \n '+
+'        ["relative=parent"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "d7b83fc9-e087-4296-bbc3-621c4'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "css=.INTPOPUPCellClose", \n '+
+'      "targets": [ \n '+
+'        ["css=.INTPOPUPCellClose", "css:finder"], \n '+
+'        ["xpath=//td[@id=\'TITLEBAR0_2CLOSE\']/div", "xpath:idRelative"], \n '+
+'        ["xpath=//td[3]/div", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "ffe15cc7-369b-46d6-8afc-007c2'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "index=3", \n '+
+'      "targets": [ \n '+
+'        ["index=3"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "4c29d227-a17d-4ed6-93f3-83bbd'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=B_377", \n '+
+'      "targets": [ \n '+
+'        ["id=B_377", "id"], \n '+
+'        ["css=#B_377", "css:finder"], \n '+
+'        ["xpath=//button[@id=\'B_377\']", "xpath:attributes"], \n '+
+'        ["xpath=//td[@id=\'TDB377\']/button", "xpath:idRelative"], \n '+
+'        ["xpath=//td[7]/button", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "c853f0dd-86d7-4fa3-866f-1a504'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "relative=parent", \n '+
+'      "targets": [ \n '+
+'        ["relative=parent"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "10ff745f-aadf-48d8-96f3-00413'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "index=0", \n '+
+'      "targets": [ \n '+
+'        ["index=0"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "3d81d66e-8c5b-43d2-b233-869cb'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=ICONIMG14", \n '+
+'      "targets": [ \n '+
+'        ["id=ICONIMG14", "id"], \n '+
+'        ["css=#ICONIMG14", "css:finder"], \n '+
+'        ["xpath=//img[@title=\'Pesquisar transação\']", "xpath:img"], \n '+
+'        ["xpath=//img[@id=\'ICONIMG14\']", "xpath:attributes"], \n '+
+'        ["xpath=//td[@id=\'ICON14\']/img", "xpath:idRelative"], \n '+
+'        ["xpath=//td[2]/table/tbody/tr/td/img", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "f8e25741-ff40-48a3-a171-ac459'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "type", \n '+
+'      "target": "id=F_62", \n '+
+'      "targets": [ \n '+
+'        ["id=F_62", "id"], \n '+
+'        ["name=CC", "name"], \n '+
+'        ["css=#F_62", "css:finder"], \n '+
+'        ["xpath=//input[@id=\'F_62\']", "xpath:attributes"], \n '+
+'        ["xpath=//tr[@id=\'ITR59\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+'        ["xpath=//input", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "fpcofichaf" \n '+
+'    }, { \n '+
+'      "id": "beff8e7a-97a8-45c9-a7f2-8508c'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "relative=parent", \n '+
+'      "targets": [ \n '+
+'        ["relative=parent"] \n '+
+'     ], \n '+
+'      "value": "" \n '+
+'    }  '; 
+    
+
+
+
+while (i <= f){
+
+
+
+    macro += ',{ \n '+
+'      "id": "c4e642e0-6ff7-4f6b-8cef-727f4'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "index=1", \n '+
+'      "targets": [ \n '+
+'        ["index=1"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "d5553caa-7818-4174-8789-bfdb5'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=CDYN_82", \n '+
+'      "targets": [ \n '+
+'        ["id=CDYN_82", "id"], \n '+
+'        ["css=#CDYN_82", "css:finder"], \n '+
+'        ["xpath=//select[@id=\'CDYN_82\']", "xpath:attributes"], \n '+
+'        ["xpath=//tr[@id=\'ITR79\']/td/table/tbody/tr/td[3]/select", "xpath:idRelative"], \n '+
+'        ["xpath=//td[3]/select", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "df48ed11-b923-4f1e-8c80-6c098'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "select", \n '+
+'      "target": "id=CDYN_82", \n '+
+'      "targets": [], \n '+
+'      "value": "label='+mesMacro+'" \n '+
+'    }, { \n '+
+'      "id": "f3911a35-7346-4a92-953a-70ba9'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=F_130", \n '+
+'      "targets": [ \n '+
+'        ["id=F_130", "id"], \n '+
+'        ["css=#F_130", "css:finder"], \n '+
+'        ["xpath=//input[@id=\'F_130\']", "xpath:attributes"], \n '+
+'        ["xpath=//tr[@id=\'ITR127\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+'        ["xpath=//tr[3]/td/table/tbody/tr/td[3]/input", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "3024ca41-1c84-4c74-b2fb-e6d3a'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "type", \n '+
+'      "target": "id=F_130", \n '+
+'      "targets": [ \n '+
+'        ["id=F_130", "id"], \n '+
+'        ["css=#F_130", "css:finder"], \n '+
+'        ["xpath=//input[@id=\'F_130\']", "xpath:attributes"], \n '+
+'        ["xpath=//tr[@id=\'ITR127\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+'        ["xpath=//tr[3]/td/table/tbody/tr/td[3]/input", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "'+document.getElementById(i).value+'" \n '+
+'    }, { \n '+
+'      "id": "79ae289a-af11-4fca-be56-82e76'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "sendKeys", \n '+
+'      "target": "id=F_134", \n '+
+'      "targets": [ \n '+
+'        ["id=F_134", "id"], \n '+
+'        ["css=#F_134", "css:finder"], \n '+
+'        ["xpath=//input[@id=\'F_134\']", "xpath:attributes"], \n '+
+'        ["xpath=//tr[@id=\'ITR127\']/td/table/tbody/tr/td[7]/input", "xpath:idRelative"], \n '+
+'        ["xpath=//td[7]/input", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "${KEY_ENTER}" \n '+
+'    }, { \n '+
+'      "id": "48d3a94e-1771-4b1b-a366-70eb4'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "relative=parent", \n '+
+'      "targets": [ \n '+
+'        ["relative=parent"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "7c4e885a-d238-435b-8240-2fa00'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "selectFrame", \n '+
+'      "target": "index=2", \n '+
+'      "targets": [ \n '+
+'        ["index=2"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "d4f8bf1c-5cc3-4ccb-a80e-39862'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=B_174", \n '+
+'      "targets": [ \n '+
+'        ["id=B_174", "id"], \n '+
+'        ["css=#B_174", "css:finder"], \n '+
+'        ["xpath=//button[@id=\'B_174\']", "xpath:attributes"], \n '+
+'        ["xpath=//td[@id=\'TDB174\']/button", "xpath:idRelative"], \n '+
+'        ["xpath=//td/table/tbody/tr/td[9]/button", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "", \n '+
+'      "opensWindow": true, \n '+
+'      "windowHandleName": "win4094", \n '+
+'      "windowTimeout": 2000 \n '+
+'    }, { \n '+
+'      "id": "543119e4-8d6b-4998-a6e2-1a75a'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "pause", \n '+
+'      "target": "13000", \n '+
+'      "targets": [], \n '+
+'      "value": "" \n '+
+'    }, { \n '+
+'      "id": "254d4f89-eb66-4b26-841a-03a8a'+document.getElementById(i).value+'", \n '+
+'      "comment": "", \n '+
+'      "command": "click", \n '+
+'      "target": "id=B_182", \n '+
+'      "targets": [ \n '+
+'        ["id=B_182", "id"], \n '+
+'        ["css=#B_182", "css:finder"], \n '+
+'        ["xpath=//button[@id=\'B_182\']", "xpath:attributes"], \n '+
+'        ["xpath=//td[@id=\'TDB182\']/button", "xpath:idRelative"], \n '+
+'        ["xpath=//td[17]/button", "xpath:position"] \n '+
+'      ], \n '+
+'      "value": "" \n '+
+'    }  ';
+
+ i++;
+
+}
+
+
+macro += '] \n '+
+'  }], \n '+
+'  "suites": [{ \n '+
+'    "id": "6951d205-42e5-4f49-95e9-e7f43'+document.getElementById(1).value+'", \n '+
+'    "name": "", \n '+
+'    "persistSession": false, \n '+
+'    "parallel": false, \n '+
+'    "timeout": 300, \n '+
+'    "tests": ["bfc243c7-7aa5-453b-a7ad-68bae4316684"] \n '+
+'  }], \n '+
+'  "urls": ["https://esiape.sigepe.gov.br/"], \n '+
+'  "plugins": [] \n '+
+'}';
+ 
+   
+    
+    let texto = macro;
+      let titulo = "FPCOFICHAF";
+   let blob = new Blob([texto], { type: "text/plain;charset=iso-8859-1" });
+      saveAs(blob, titulo + ".side");
+    
+}
+     
+
+  
+function geraMacroUIVision(){
+        
+
+        var i = 1;
+        var i2 = 1;
+        var f = 0;
+        var siape = new Array();
+        var mesSelect = document.getElementById("mes").value;
+        var mesMacro = '';
+        
+                if (mesSelect == 1){
+                    mesMacro = 'Janeiro';
+                }
+                if (mesSelect == 2){
+                    mesMacro = 'fevereiro';
+                }
+                if (mesSelect == 3){
+                    mesMacro = 'Marco';
+                }
+                if (mesSelect == 4){
+                    mesMacro = 'Abril';
+                }
+                if (mesSelect == 5){
+                    mesMacro = 'Maio';
+                }
+                if (mesSelect == 6){
+                    mesMacro = 'Junho';
+                }
+                if (mesSelect == 7){
+                    mesMacro = 'Julho';
+                }
+                if (mesSelect == 8){
+                    mesMacro = 'Agosto';
+                }
+                if (mesSelect == 9){
+                    mesMacro = 'Setembro';
+                }
+                if (mesSelect == 10){
+                    mesMacro = 'Outubro';
+                }
+                if (mesSelect == 11){
+                    mesMacro = 'Novembro';
+                }
+                if (mesSelect == 12){
+                    mesMacro = 'Dezembro';
+                }
+        
+        //pega o valor dos atrasados de vencimento e soma ao valor total de V.B.
+        
+        while ((document.getElementById(i2).value > 0) && (i2 < 61)){
+            f++;
+            i2++;
+            }
+         
+            
+        var macro = '{ \n '+
+        '  "name": "Calculo'+siape[1]+'", \n '+
+        '  "CreationDate": "2022-8-4", \n '+
+        '  "Commands": [{ \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "open", \n '+
+        '      "Target": "https://esiape.sigepe.gov.br/modsiape/servlet/StartCISPage?PAGEURL=/cisnatural/NatLogon.html&xciParameters.natsession=modsiape", \n '+
+        '      "Targets": [], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "setWindowSize", \n '+
+        '      "Target": "1000x768", \n '+
+        '      "Targets": [], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "2000", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "selectFrame", \n '+
+        '      "Target": "relative=parent", \n '+
+        '      "Targets": [ \n '+
+        '        ["relative=parent"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "selectFrame", \n '+
+        '      "Target": "index=0", \n '+
+        '      "Targets": [ \n '+
+        '        ["index=0"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "click", \n '+
+        '      "Target": "id=ICONIMG14", \n '+
+        '      "Targets": [ \n '+
+        '        ["id=ICONIMG14", "id"], \n '+
+        '        ["css=#ICONIMG14", "css:finder"], \n '+
+        '        ["xpath=//img[@title=\'Pesquisar transação\']", "xpath:img"], \n '+
+        '        ["xpath=//img[@id=\'ICONIMG14\']", "xpath:attributes"], \n '+
+        '        ["xpath=//td[@id=\'ICON14\']/img", "xpath:idRelative"], \n '+
+        '        ["xpath=//td[2]/table/tbody/tr/td/img", "xpath:position"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "type", \n '+
+        '      "Target": "id=F_62", \n '+
+        '      "Targets": [ \n '+
+        '        ["id=F_62", "id"], \n '+
+        '        ["name=CC", "name"], \n '+
+        '        ["css=#F_62", "css:finder"], \n '+
+        '        ["xpath=//input[@id=\'F_62\']", "xpath:attributes"], \n '+
+        '        ["xpath=//tr[@id=\'ITR59\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+        '        ["xpath=//input", "xpath:position"] \n '+
+        '      ], \n '+
+        '      "Value": "fpcofichaf" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "selectFrame", \n '+
+        '      "Target": "relative=parent", \n '+
+        '      "Targets": [ \n '+
+        '        ["relative=parent"] \n '+
+        '     ], \n '+
+        '      "Value": "" \n '+
+        '    }  '; 
+            
+        
+        
+        
+        while (i <= f){
+        
+        
+        
+            macro += ',{ \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "selectFrame", \n '+
+        '      "Target": "index=1", \n '+
+        '      "Targets": [ \n '+
+        '        ["index=1"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "click", \n '+
+        '      "Target": "id=CDYN_82", \n '+
+        '      "Targets": [ \n '+
+        '        ["id=CDYN_82", "id"], \n '+
+        '        ["css=#CDYN_82", "css:finder"], \n '+
+        '        ["xpath=//select[@id=\'CDYN_82\']", "xpath:attributes"], \n '+
+        '        ["xpath=//tr[@id=\'ITR79\']/td/table/tbody/tr/td[3]/select", "xpath:idRelative"], \n '+
+        '        ["xpath=//td[3]/select", "xpath:position"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "select", \n '+
+        '      "Target": "id=CDYN_82", \n '+
+        '      "Targets": [], \n '+
+        '      "Value": "label='+mesMacro+'" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "click", \n '+
+        '      "Target": "id=F_130", \n '+
+        '      "Targets": [ \n '+
+        '        ["id=F_130", "id"], \n '+
+        '        ["css=#F_130", "css:finder"], \n '+
+        '        ["xpath=//input[@id=\'F_130\']", "xpath:attributes"], \n '+
+        '        ["xpath=//tr[@id=\'ITR127\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+        '        ["xpath=//tr[3]/td/table/tbody/tr/td[3]/input", "xpath:position"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    }, { \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "type", \n '+
+        '      "Target": "id=F_130", \n '+
+        '      "Targets": [ \n '+
+        '        ["id=F_130", "id"], \n '+
+        '        ["css=#F_130", "css:finder"], \n '+
+        '        ["xpath=//input[@id=\'F_130\']", "xpath:attributes"], \n '+
+        '        ["xpath=//tr[@id=\'ITR127\']/td/table/tbody/tr/td[3]/input", "xpath:idRelative"], \n '+
+        '        ["xpath=//tr[3]/td/table/tbody/tr/td[3]/input", "xpath:position"] \n '+
+        '      ], \n '+
+        '      "Value": "'+document.getElementById(i).value+'" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "800", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "2000", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '   { \n '+
+        '      "Command": "XMouseWheel", \n '+
+        '      "Target": "+2", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '   { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "200", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '   { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_CTRL+KEY_P}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "1500", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "1500", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "'+document.getElementById("nome"+i).value+'", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "1000", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_ENTER}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '   { \n '+
+        '      "Command": "pause", \n '+
+        '      "Target": "2000", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    { \n '+
+        '      "Command": "XType", \n '+
+        '      "Target": "${KEY_F12}", \n '+
+        '      "Value": "", \n '+
+        '      "Description": "" \n '+
+        '    }, \n '+
+        '    {  \n '+
+        '      "Comment": "", \n '+
+        '      "Command": "selectFrame", \n '+
+        '      "Target": "relative=parent", \n '+
+        '      "Targets": [ \n '+
+        '        ["relative=parent"] \n '+
+        '      ], \n '+
+        '      "Value": "" \n '+
+        '    } \n ';
+        
+         i++;
+        
+        }
+        
+        
+        macro += ' ] \n '+
+'}';
+         
+           
+            
+            let texto = macro;
+              let titulo = "FPCOFICHAF";
+           let blob = new Blob([texto], { type: "text/plain;charset=iso-8859-1" });
+              saveAs(blob, titulo + ".json");
+            
+        }
+           
+  
+    </script>
+
+    <%= render "layouts/footer" %>
+        
+        
+        
+
+
+
+
+  

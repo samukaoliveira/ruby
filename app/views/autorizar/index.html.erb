@@ -1,0 +1,717 @@
+<%= render "layouts/header" %>
+<br><br>
+    
+		
+        <form name="calcular" method="post" action="">
+            
+            <h3>Separador de Rubricas para Autorizar (ADAUTORIZA)</h3>
+
+            
+			<label for="siape">Copie e cole aqui a planilha do Excel (NÃO ESQUEÇA DE COPIAR UMA COLUNA A MAIS EM BRANCO)</label><BR>
+			
+				<label for="siape"><b>Baixe aqui o modelo de planilha do Excel</b></label>
+					<a href="modelo_plan_TAE.xlsx"><input type="button" value="BAIXAR"></a><BR><BR>
+
+			<textarea id="control_v" style="width: 750px; height: 220px"  size="1100" maxlength="1100" name="control_v" placeholder="Copie e cola aqui as SIAPEs do Excel" >
+			</textarea><br>
+           			
+			<input type="button" value="Inserir Matrículas" onclick="insereMats();"><br><br>
+			
+            
+			<label for="siape">Confira se os dados estão OK e clique em Gerar Macro.</label><BR>
+            <div id="dvData">
+			<table name="autorizar" id="autorizar">
+                <th size="7" id="siape">IQ 10 - 82918</th>
+                <th></th>
+                <th size="7" id="siape">IQ 15 - 82919</th>
+                <th></th>
+                <th size="7" id="siape">IQ 20 - 82920</th>
+                <th></th>
+                <th size="7" id="siape">IQ 25 - 82921</th>
+                <th></th>
+                <th size="7" id="siape">IQ 30 - 82922</th>
+                <th></th>
+                <th size="7" id="siape">IQ 35 - 82923</th>
+                <th></th>
+                <th size="7" id="siape">IQ 50 - 82924</th>
+                <th></th>
+                <th size="7" id="siape">IQ 52 - 82925</th>
+                <th></th>
+                <th size="7" id="siape">IQ 75 - 82926</th>
+                <th></th>
+                <th size="7" id="siape">RT - 82606</th>
+                <th></th>
+                <th size="7" id="siape">RSC - 82915</th>
+                <th></th>
+           
+			<tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_0" id="82918_0" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_0" id="82919_0" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_0" id="82920_0" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_0" id="82921_0" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_0" id="82922_0" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_0" id="82923_0" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_0" id="82924_0" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_0" id="82925_0" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_0" id="82926_0" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_0" id="82606_0" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_0" id="82915_0" value=""></td>
+            </tr>
+			<tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_1" id="82918_1" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_1" id="82919_1" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_1" id="82920_1" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_1" id="82921_1" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_1" id="82922_1" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_1" id="82923_1" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_1" id="82924_1" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_1" id="82925_1" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_1" id="82926_1" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_1" id="82606_1" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_1" id="82915_1" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_2" id="82918_2" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_2" id="82919_2" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_2" id="82920_2" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_2" id="82921_2" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_2" id="82922_2" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_2" id="82923_2" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_2" id="82924_2" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_2" id="82925_2" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_2" id="82926_2" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_2" id="82606_2" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_2" id="82915_2" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_3" id="82918_3" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_3" id="82919_3" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_3" id="82920_3" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_3" id="82921_3" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_3" id="82922_3" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_3" id="82923_3" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_3" id="82924_3" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_3" id="82925_3" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_3" id="82926_3" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_3" id="82606_3" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_3" id="82915_3" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_4" id="82918_4" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_4" id="82919_4" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_4" id="82920_4" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_4" id="82921_4" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_4" id="82922_4" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_4" id="82923_4" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_4" id="82924_4" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_4" id="82925_4" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_4" id="82926_4" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_4" id="82606_4" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_4" id="82915_4" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_5" id="82918_5" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_5" id="82919_5" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_5" id="82920_5" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_5" id="82921_5" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_5" id="82922_5" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_5" id="82923_5" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_5" id="82924_5" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_5" id="82925_5" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_5" id="82926_5" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_5" id="82606_5" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_5" id="82915_5" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_6" id="82918_6" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_6" id="82919_6" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_6" id="82920_6" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_6" id="82921_6" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_6" id="82922_6" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_6" id="82923_6" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_6" id="82924_6" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_6" id="82925_6" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_6" id="82926_6" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_6" id="82606_6" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_6" id="82915_6" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_7" id="82918_7" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_7" id="82919_7" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_7" id="82920_7" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_7" id="82921_7" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_7" id="82922_7" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_7" id="82923_7" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_7" id="82924_7" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_7" id="82925_7" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_7" id="82926_7" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_7" id="82606_7" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_7" id="82915_7" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_8" id="82918_8" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_8" id="82919_8" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_8" id="82920_8" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_8" id="82921_8" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_8" id="82922_8" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_8" id="82923_8" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_8" id="82924_8" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_8" id="82925_8" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_8" id="82926_8" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_8" id="82606_8" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_8" id="82915_8" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_9" id="82918_9" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_9" id="82919_9" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_9" id="82920_9" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_9" id="82921_9" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_9" id="82922_9" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_9" id="82923_9" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_9" id="82924_9" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_9" id="82925_9" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_9" id="82926_9" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_9" id="82606_9" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_9" id="82915_9" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_10" id="82918_10" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_10" id="82919_10" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_10" id="82920_10" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_10" id="82921_10" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_10" id="82922_10" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_10" id="82923_10" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_10" id="82924_10" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_10" id="82925_10" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_10" id="82926_10" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_10" id="82606_10" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_10" id="82915_10" value=""></td>
+            </tr>
+            <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_11" id="82918_11" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_11" id="82919_11" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_11" id="82920_11" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_11" id="82921_11" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_11" id="82922_11" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_11" id="82923_11" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_11" id="82924_11" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_11" id="82925_11" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_11" id="82926_11" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_11" id="82606_11" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_11" id="82915_11" value=""></td>
+            </tr>
+             <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_12" id="82918_12" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_12" id="82919_12" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_12" id="82920_12" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_12" id="82921_12" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_12" id="82922_12" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_12" id="82923_12" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_12" id="82924_12" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_12" id="82925_12" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_12" id="82926_12" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_12" id="82606_12" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_12" id="82915_12" value=""></td>
+            </tr>
+             <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_13" id="82918_13" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_13" id="82919_13" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_13" id="82920_13" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_13" id="82921_13" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_13" id="82922_13" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_13" id="82923_13" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_13" id="82924_13" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_13" id="82925_13" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_13" id="82926_13" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_13" id="82606_13" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_13" id="82915_13" value=""></td>
+            </tr>
+             <tr>
+			<td><input type="text" size="7" maxlength="7" name="82918_14" id="82918_14" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82919_14" id="82919_14" value=""></td>
+            <td></td>
+            <td> <input type="text" size="7" maxlength="7" name="82920_14" id="82920_14" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82921_14" id="82921_14" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82922_14" id="82922_14" value=""></td>
+            <td></td>
+            <td><input type="text" size="7" maxlength="7" name="82923_14" id="82923_14" value=""></td>
+            <td></td>			
+            <td><input type="text" size="7" maxlength="7" name="82924_14" id="82924_14" value=""></td>
+            <td></td>
+			<td><input type="text" size="7" maxlength="7" name="82925_14" id="82925_14" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82926_14" id="82926_14" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82606_14" id="82606_14" value=""></td>
+            <td></td>            			
+            <td><input type="text" size="7" maxlength="7" name="82915_14" id="82915_14" value=""></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><input type="button" size="7" maxlength="7" name="cop_82918" onclick="copia_82918();" value="Copiar">
+                    <input type="hidden" id="copiado_82918"></input>
+                </td>
+                <td></td>
+                <td><input type="button" size="7" maxlength="7" name="cop_82919" onclick="copia_82919();" value="Copiar">
+                    <input type="hidden" id="copiado_82919"></input></td>
+                <td></td>
+                <td> <input type="button" size="7" maxlength="7" name="cop_82920" onclick="copia_82920();" value="Copiar">
+                    <input type="hidden" id="copiado_82920"></input></td>
+                <td></td>
+                <td><input type="button" size="7" maxlength="7" name="cop_82921" onclick="copia_82921();" value="Copiar">
+                    <input type="hidden" id="copiado_82921"></input></td>
+                <td></td>
+                <td><input type="button" size="7" maxlength="7" name="cop_82922" onclick="copia_82922();" value="Copiar">
+                    <input type="hidden" id="copiado_82922"></input></td>
+                <td></td>
+                <td><input type="button" size="7" maxlength="7" name="cop_82923" onclick="copia_82923();" value="Copiar">
+                    <input type="hidden" id="copiado_82923"></input></td>
+                <td></td>			
+                <td><input type="button" size="7" maxlength="7" name="cop_82924" onclick="copia_82924();" value="Copiar">
+                    <input type="hidden" id="copiado_82924"></input></td>
+                <td></td>
+                <td><input type="button" size="7" maxlength="7" name="cop_82925" onclick="copia_82925();" value="Copiar">
+                    <input type="hidden" id="copiado_82925"></input></td>
+                <td></td>            			
+                <td><input type="button" size="7" maxlength="7" name="cop_82926" onclick="copia_82926();" value="Copiar">
+                    <input type="hidden" id="copiado_82926"></input></td>
+                <td></td>   
+                <td><input type="button" size="7" maxlength="7" name="cop_82606" onclick="copia_82606();" value="Copiar">
+                    <input type="hidden" id="copiado_82606"></input></td>
+                <td></td>   
+                <td><input type="button" size="7" maxlength="7" name="cop_82915" onclick="copia_82915();" value="Copiar">
+                    <input type="hidden" id="copiado_82915"></input></td>
+                </tr>
+                    </table>
+                </div>
+        </form>
+        <br><br>
+		
+		     
+        <button id="btnExport">Export HTML Table</button><br><br><br><br>
+		
+    
+	<script src="FileSaver.js"></script>
+	<script src="jquery-1.5.2.min.js"></script>
+		<script src="jquery.maskedinput-1.3.min.js"></script>
+	
+	<script type="text/javascript">
+	//	jQuery(function($){
+    //  $('#siapes').mask('9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;');
+    //  });
+	
+	</script>
+    <script src="jquery-2.0.1.min.js"></script>
+    <script src="jquery.btechco.excelexport.js"></script>
+    <script src="jquery.base64.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnExport").click(function () {
+                $("#autorizar").btechco_excelexport({
+                    containerid: "autorizar"
+                   , datatype: $datatype.Table
+                   , filename: 'sample'
+                });
+            });
+        });
+    </script>
+	
+      <script>
+
+       
+
+	
+	function insereMats(){
+	
+	var control_c = document.getElementById("control_v").value;
+	var control_v = control_c.split("\t");
+	
+	var siape = new Array();
+    var iq = new Array();
+    var rub82918 = 0;
+    var rub82919 = 0;
+    var rub82920 = 0;
+    var rub82921 = 0;
+    var rub82922 = 0;
+    var rub82923 = 0;
+    var rub82924 = 0;
+    var rub82925 = 0;
+    var rub82926 = 0;
+    var rub82606 = 0;
+    var rub82915 = 0;
+    
+		
+	var col=0;
+	var lin=0;
+		
+	while (lin <= 29){
+
+        
+        siape[lin] = control_v[col];
+        col++;
+               
+        iq[lin] = control_v[col];
+        col++;
+
+        if ((iq[lin] == '10') || (iq[lin] == '82918')){
+            document.getElementById("82918_"+rub82918).value = siape[lin];
+        rub82918++;
+        }
+
+        if ((iq[lin] == '15') || (iq[lin] == '82919')){
+            document.getElementById("82919_"+rub82919).value = siape[lin];
+        rub82919++;
+        }
+
+        if ((iq[lin] == '20') || (iq[lin] == '82920')){
+            document.getElementById("82920_"+rub82920).value = siape[lin];
+        rub82920++;
+        }
+
+        if ((iq[lin] == '25') || (iq[lin] == '82921')){
+            document.getElementById("82921_"+rub82921).value = siape[lin];
+        rub82921++;
+        }
+
+        if ((iq[lin] == '30') || (iq[lin] == '82922')){
+            document.getElementById("82922_"+rub82922).value = siape[lin];
+        rub82922++;
+        }
+
+        if ((iq[lin] == '35') || (iq[lin] == '82923')){
+            document.getElementById("82923_"+rub82923).value = siape[lin];
+        rub82923++;
+        }
+
+        if ((iq[lin] == '50') || (iq[lin] == '82924')){
+            document.getElementById("82924_"+rub82924).value = siape[lin];
+        rub82924++;
+        }
+
+        if ((iq[lin] == '52') || (iq[lin] == '82925')){
+            document.getElementById("82925_"+rub82925).value = siape[lin];
+        rub82925++;
+        }
+
+        if ((iq[lin] == '75') || (iq[lin] == '82926')){
+            document.getElementById("82926_"+rub82926).value = siape[lin];
+        rub82926++;
+        }
+
+        if ((iq[lin] == 'RT') || (iq[lin] == 'rt') || (iq[lin] == '82606') || (iq[lin] == 'Rt')){
+            document.getElementById("82606_"+rub82606).value = siape[lin];
+        rub82606++;
+        }
+
+        if ((iq[lin] == 'RSC') || (iq[lin] == 'rsc') || (iq[lin] == 'Rsc') || (iq[lin] == '82915')){
+            document.getElementById("82915_"+rub82915).value = siape[lin];
+        rub82915++;
+        }
+    
+ 
+	lin++;	
+	
+	}
+	
+	//cria a div das rubricas
+    
+	
+	
+	}
+
+
+
+    function copia_82918(){
+        i= 0;
+        var copiar_82918 = '';
+
+        while(i<15) {
+            copiar_82918 += document.getElementById('82918_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82918').innerHTML = copiar_82918;
+        const copiado = document.getElementById('copiado_82918');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82919(){
+        i= 0;
+        var copiar_82919 = '';
+
+        while(i<15) {
+            copiar_82919 += document.getElementById('82919_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82919').innerHTML = copiar_82919;
+        const copiado = document.getElementById('copiado_82919');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82920(){
+        i= 0;
+        var copiar_82920 = '';
+
+        while(i<15) {
+            copiar_82920 += document.getElementById('82920_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82920').innerHTML = copiar_82920;
+        const copiado = document.getElementById('copiado_82920');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82921(){
+        i= 0;
+        var copiar_82921 = '';
+
+        while(i<15) {
+            copiar_82921 += document.getElementById('82921_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82921').innerHTML = copiar_82921;
+        const copiado = document.getElementById('copiado_82921');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82922(){
+        i= 0;
+        var copiar_82922 = '';
+
+        while(i<15) {
+            copiar_82922 += document.getElementById('82922_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82922').innerHTML = copiar_82922;
+        const copiado = document.getElementById('copiado_82922');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82923(){
+        i= 0;
+        var copiar_82923 = '';
+
+        while(i<15) {
+            copiar_82923 += document.getElementById('82923_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82923').innerHTML = copiar_82923;
+        const copiado = document.getElementById('copiado_82923');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82924(){
+        i= 0;
+        var copiar_82924 = '';
+
+        while(i<15) {
+            copiar_82924 += document.getElementById('82924_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82924').innerHTML = copiar_82924;
+        const copiado = document.getElementById('copiado_82924');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82925(){
+        i= 0;
+        var copiar_82925 = '';
+
+        while(i<15) {
+            copiar_82925 += document.getElementById('82925_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82925').innerHTML = copiar_82925;
+        const copiado = document.getElementById('copiado_82925');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82926(){
+        i= 0;
+        var copiar_82926 = '';
+
+        while(i<15) {
+            copiar_82926 += document.getElementById('82926_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82926').innerHTML = copiar_82926;
+        const copiado = document.getElementById('copiado_82926');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82606(){
+        i= 0;
+        var copiar_82606 = '';
+
+        while(i<15) {
+            copiar_82606 += document.getElementById('82606_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82606').innerHTML = copiar_82606;
+        const copiado = document.getElementById('copiado_82606');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+
+    function copia_82915(){
+        i= 0;
+        var copiar_82915 = '';
+
+        while(i<15) {
+            copiar_82915 += document.getElementById('82915_'+i).value+'\n';
+            i++;
+        }
+        document.getElementById('copiado_82915').innerHTML = copiar_82915;
+        const copiado = document.getElementById('copiado_82915');
+        navigator.clipboard.writeText(copiado.innerText);
+    }
+	
+ 			   
+  
+    </script>
+        
+
+
+
+  

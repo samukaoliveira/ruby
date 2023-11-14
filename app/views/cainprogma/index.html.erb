@@ -1,0 +1,520 @@
+<%= render "layouts/header" %>
+
+<br><br>
+        
+
+        <form name="calcular" method="post" action="">
+            
+            <h3>Macro de Cadastro de Progressão (CAINPROGMA/CACOPOSPRO)</h3>
+            
+            <label for="siape">Copie e cole aqui a planilha do Excel (NÃO ESQUEÇA DE COPIAR UMA COLUNA A MAIS EM BRANCO)</label>><BR>
+			
+				<label for="siape"><b>Baixe aqui o modelo de planilha do Excel</b></label>
+					<a href="modelo_cainprogma.xlsx"><input type="button" value="BAIXAR"></a><BR><BR>
+			<textarea id="control_v" style="width: 1250px; height: 220px"  size="1250" maxlength="1250" name="control_v" placeholder="Copie e cola aqui as SIAPEs do Excel" >
+			</textarea><br>
+           			
+			<input type="button" value="Inserir Matrículas" onclick="insereMats();"><br><br>
+			
+            
+			<label for="siape">Confira se os dados estão OK e clique em Gerar Macro.</label><BR>
+			<table>
+            <th size="30" id="port">PORTARIA</th>
+			<th id="sipe">SiapeCAD</th>
+			<th id="data">DATA</th>
+			<th id="nivel">NÍVEL</th>
+			<th id="classe">CLASSE</th>
+			<th id="padrao">PADRÃO</th>
+			</table>
+			<br>
+			<input type"text" name="portaria0" id="portaria0" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad0" id="siapecad0" value="">
+			<input type"text" name="data0" id="data0" value="">
+			<input type"text" size="2" maxlength="2" name="nivel0" id="nivel0" value="">
+			<input type"text" size="2" maxlength="2" name="classe0" id="classe0" value="">
+			<input type"text" size="3" maxlength="3" name="padrao0" id="padrao0" value="">
+			<br>
+			<input type"text" name="portaria1" id="portaria1" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad1" id="siapecad1" value="">
+			<input type"text" name="data1" id="data1" value="">
+			<input type"text" size="2" maxlength="2" name="nivel1" id="nivel1" value="">
+			<input type"text" size="2" maxlength="2" name="classe1" id="classe1" value="">
+			<input type"text" size="3" maxlength="3" name="padrao1" id="padrao1" value="">
+			<br>
+			<input type"text" name="portaria2" id="portaria2" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad2" id="siapecad2" value="">
+			<input type"text" name="data2" id="data2" value="">
+			<input type"text" size="2" maxlength="2" name="nivel2" id="nivel2" value="">
+			<input type"text" size="2" maxlength="2" name="classe2" id="classe2" value="">
+			<input type"text" size="3" maxlength="3" name="padrao2" id="padrao2" value="">
+			<br>
+			<input type"text" name="portaria3" id="portaria3" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad3" id="siapecad3" value="">
+			<input type"text" name="data3" id="data3" value="">
+			<input type"text" size="2" maxlength="2" name="nivel3" id="nivel3" value="">
+			<input type"text" size="2" maxlength="2" name="classe3" id="classe3" value="">
+			<input type"text" size="3" maxlength="3" name="padrao3" id="padrao3" value="">
+			<br>
+			<input type"text" name="portaria4" id="portaria4" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad4" id="siapecad4" value="">
+			<input type"text" name="data4" id="data4" value="">
+			<input type"text" size="2" maxlength="2" name="nivel4" id="nivel4" value="">
+			<input type"text" size="2" maxlength="2" name="classe4" id="classe4" value="">
+			<input type"text" size="3" maxlength="3" name="padrao4" id="padrao4" value="">
+			<BR>
+			<input type"text" name="portaria5" id="portaria5" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad5" id="siapecad5" value="">
+			<input type"text" name="data5" id="data5" value="">
+			<input type"text" size="2" maxlength="2" name="nivel5" id="nivel5" value="">
+			<input type"text" size="2" maxlength="2" name="classe5" id="classe5" value="">
+			<input type"text" size="3" maxlength="3" name="padrao5" id="padrao5" value="">
+			<br>
+			<input type"text" name="portaria6" id="portaria6" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad6" id="siapecad6" value="">
+			<input type"text" name="data6" id="data6" value="">
+			<input type"text" size="2" maxlength="2" name="nivel6" id="nivel6" value="">
+			<input type"text" size="2" maxlength="2" name="classe6" id="classe6" value="">
+			<input type"text" size="3" maxlength="3" name="padrao6" id="padrao6" value="">
+			<br>
+			<input type"text" name="portaria7" id="portaria7" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad7" id="siapecad7" value="">
+			<input type"text" name="data7" id="data7" value="">
+			<input type"text" size="2" maxlength="2" name="nivel7" id="nivel7" value="">
+			<input type"text" size="2" maxlength="2" name="classe7" id="classe7" value="">
+			<input type"text" size="3" maxlength="3" name="padrao7" id="padrao7" value="">
+			<br>
+			<input type"text" name="portaria8" id="portaria8" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad8" id="siapecad8" value="">
+			<input type"text" name="data8" id="data8" value="">
+			<input type"text" size="2" maxlength="2" name="nivel8" id="nivel8" value="">
+			<input type"text" size="2" maxlength="2" name="classe8" id="classe8" value="">
+			<input type"text" size="3" maxlength="3" name="padrao8" id="padrao8" value="">
+			<br>
+			<input type"text" name="portaria9" id="portaria9" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad9" id="siapecad9" value="">
+			<input type"text" name="data9" id="data9" value="">
+			<input type"text" size="2" maxlength="2" name="nivel9" id="nivel9" value="">
+			<input type"text" size="2" maxlength="2" name="classe9" id="classe9" value="">
+			<input type"text" size="3" maxlength="3" name="padrao9" id="padrao9" value="">
+			<br>
+			<input type"text" name="portaria10" id="portaria10" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad10" id="siapecad10" value="">
+			<input type"text" name="data10" id="data10" value="">
+			<input type"text" size="2" maxlength="2" name="nivel10" id="nivel10" value="">
+			<input type"text" size="2" maxlength="2" name="classe10" id="classe10" value="">
+			<input type"text" size="3" maxlength="3" name="padrao10" id="padrao10" value="">
+			<br>
+			<input type"text" name="portaria11" id="portaria11" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad11" id="siapecad11" value="">
+			<input type"text" name="data11" id="data11" value="">
+			<input type"text" size="2" maxlength="2" name="nivel11" id="nivel11" value="">
+			<input type"text" size="2" maxlength="2" name="classe11" id="classe11" value="">
+			<input type"text" size="3" maxlength="3" name="padrao11" id="padrao11" value="">
+			<br>
+			<input type"text" name="portaria12" id="portaria12" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad12" id="siapecad12" value="">
+			<input type"text" name="data12" id="data12" value="">
+			<input type"text" size="2" maxlength="2" name="nivel12" id="nivel12" value="">
+			<input type"text" size="2" maxlength="2" name="classe12" id="classe12" value="">
+			<input type"text" size="3" maxlength="3" name="padrao12" id="padrao12" value="">
+			<br>
+			<input type"text" name="portaria13" id="portaria13" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad13" id="siapecad13" value="">
+			<input type"text" name="data13" id="data13" value="">
+			<input type"text" size="2" maxlength="2" name="nivel13" id="nivel13" value="">
+			<input type"text" size="2" maxlength="2" name="classe13" id="classe13" value="">
+			<input type"text" size="3" maxlength="3" name="padrao13" id="padrao13" value="">
+			<br>
+			<input type"text" name="portaria14" id="portaria14" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad14" id="siapecad14" value="">
+			<input type"text" name="data14" id="data14" value="">
+			<input type"text" size="2" maxlength="2" name="nivel14" id="nivel14" value="">
+			<input type"text" size="2" maxlength="2" name="classe14" id="classe14" value="">
+			<input type"text" size="3" maxlength="3" name="padrao14" id="padrao14" value="">
+			<BR>
+			<input type"text" name="portaria15" id="portaria15" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad15" id="siapecad15" value="">
+			<input type"text" name="data15" id="data15" value="">
+			<input type"text" size="2" maxlength="2" name="nivel15" id="nivel15" value="">
+			<input type"text" size="2" maxlength="2" name="classe15" id="classe15" value="">
+			<input type"text" size="3" maxlength="3" name="padrao15" id="padrao15" value="">
+			<br>
+			<input type"text" name="portaria16" id="portaria16" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad16" id="siapecad16" value="">
+			<input type"text" name="data16" id="data16" value="">
+			<input type"text" size="2" maxlength="2" name="nivel16" id="nivel16" value="">
+			<input type"text" size="2" maxlength="2" name="classe16" id="classe16" value="">
+			<input type"text" size="3" maxlength="3" name="padrao16" id="padrao16" value="">
+			<br>
+			<input type"text" name="portaria17" id="portaria17" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad17" id="siapecad17" value="">
+			<input type"text" name="data17" id="data17" value="">
+			<input type"text" size="2" maxlength="2" name="nivel17" id="nivel17" value="">
+			<input type"text" size="2" maxlength="2" name="classe17" id="classe17" value="">
+			<input type"text" size="3" maxlength="3" name="padrao17" id="padrao17" value="">
+			<br>
+			<input type"text" name="portaria18" id="portaria18" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad18" id="siapecad18" value="">
+			<input type"text" name="data18" id="data18" value="">
+			<input type"text" size="2" maxlength="2" name="nivel18" id="nivel18" value="">
+			<input type"text" size="2" maxlength="2" name="classe18" id="classe18" value="">
+			<input type"text" size="3" maxlength="3" name="padrao18" id="padrao18" value="">
+			<br>
+			<input type"text" name="portaria19" id="portaria19" value="">
+			<input type"text" size="8" maxlength="8" name="siapecad19" id="siapecad19" value="">
+			<input type"text" name="data19" id="data19" value="">
+			<input type"text" size="2" maxlength="2" name="nivel19" id="nivel19" value="">
+			<input type"text" size="2" maxlength="2" name="classe19" id="classe19" value="">
+			<input type"text" size="3" maxlength="3" name="padrao19" id="padrao19" value="">
+
+            
+        </form>
+        <br><br>
+		
+		     
+		    <input type="button" value="Gerar Cainprogma" onclick="geraMacro();">
+			<input type="button" value="Gerar Cacopospro" onclick="cacopospro();">
+            <input type="button" value="Reset" onclick="apagaDiv();">
+
+
+			<br><br><br><br>
+        
+    
+	<script src="FileSaver.js"></script>
+	<script src="jquery-1.5.2.min.js"></script>
+		<script src="jquery.maskedinput-1.3.min.js"></script>
+	
+	<script type="text/javascript">
+	//	jQuery(function($){
+    //  $('#siapes').mask('9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;9999999;');
+    //  });
+	
+	</script>
+	
+	
+    
+    <script>
+	
+	function insereMats(){
+	
+	var control_c = document.getElementById("control_v").value;
+	var control_v = control_c.split("\t");
+	
+	var portaria = new Array();
+	var siapecad = new Array();
+	var data = new Array();
+	var nivel = new Array();
+	var classe = new Array();
+	var padrao = new Array();
+	
+	var col=0;
+	var lin=0;
+		
+	while (lin <= 19){
+	portaria[lin] = control_v[col];
+	document.getElementById("portaria"+lin).value = portaria[lin];
+	col++;
+	
+	siapecad[lin] = control_v[col];
+	document.getElementById("siapecad"+lin).value = siapecad[lin];
+	col++;
+	
+	data[lin] = control_v[col];
+	document.getElementById("data"+lin).value = data[lin];
+	col++;
+	
+	nivel[lin] = control_v[col];
+	document.getElementById("nivel"+lin).value = nivel[lin];
+	col++;
+	
+	classe[lin] = control_v[col];
+	document.getElementById("classe"+lin).value = classe[lin];
+	col++;
+	
+	padrao[lin] = control_v[col];
+	document.getElementById("padrao"+lin).value = padrao[lin];
+	col++;
+
+	lin++;	
+	
+	}
+	
+	//cria a div das rubricas
+    
+	
+	
+	}
+	
+    
+    function geraMacro(){
+        
+
+var i = 0;
+var i2 = 0;
+var f = 0;
+var siape = new Array();
+
+//pega o valor dos atrasados de vencimento e soma ao valor total de V.B.
+
+try {
+  // seu código aqui
+
+
+while (document.getElementById("portaria"+i2).value != isNaN){
+	f++;
+			
+	i2++;
+	}
+	
+} catch (error) {
+  // tratamento de erro aqui
+}
+
+
+
+
+
+var macro = '<HAScript name="CAINPROGMA" description="" timeout="60000" pausetime="300" promptall="true" blockinput="false" author="Samuka" creationdate="29/06/2022  \n '+
+'16:11:37" supressclearevents="false" usevars="false" ignorepauseforenhancedtn="true" delayifnotenhancedtn="0" ignorepausetimeforenhancedtn="true">';
+
+try {
+  // seu código aqui
+
+
+while (i <= f){
+
+
+
+		macro += '    <screen name="Tela'+i+'1" entryscreen="true" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+' 			<mouseclick row="9" col="21" /> \n '+
+'            <input value="'+document.getElementById("portaria"+i).value+'[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'2" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+'                \n '+
+'    <screen name="Tela'+i+'2" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'            <numfields number="78" optional="false" invertmatch="false" /> \n '+
+'            <numinputfields number="1" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="'+document.getElementById("siapecad"+i).value+'[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'3" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+'              \n '+
+'    <screen name="Tela'+i+'3" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'            <numfields number="98" optional="false" invertmatch="false" /> \n '+
+'            <numinputfields number="2" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="046'+document.getElementById("data"+i).value+'[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'4" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+'                \n '+
+'    <screen name="Tela'+i+'4" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'            <numfields number="113" optional="false" invertmatch="false" /> \n '+
+'            <numinputfields number="3" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="'+document.getElementById("nivel"+i).value+'[tab]'+document.getElementById("classe"+i).value+'[tab]'+document.getElementById("padrao"+i).value+'[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'5" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+'             \n '+
+'    <screen name="Tela'+i+'5" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'            <numfields number="113" optional="false" invertmatch="false" /> \n '+
+'            <numinputfields number="1" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="S[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'6" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+'          \n '+
+'    <screen name="Tela'+i+'6" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'            <oia status="NOTINHIBITED" optional="false" invertmatch="false" /> \n '+
+'            <numfields number="138" optional="false" invertmatch="false" /> \n '+
+'            <numinputfields number="0" optional="false" invertmatch="false" /> \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+(i+1)+'1" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n ';
+
+ i++;
+
+}
+ 
+ } catch (error) {
+  // tratamento de erro aqui
+}
+  
+    
+    macro += '</HAScript>';
+    
+    let texto = macro;
+      let titulo = "CAINPROGMA";
+   let blob = new Blob([texto], { type: "text/plain;charset=iso-8859-1" });
+      saveAs(blob, titulo + ".mac");
+    
+}
+       
+
+	function cacopospro(){
+
+
+	var i = 0;
+var i2 = 0;
+var f = 0;
+var siape = new Array();
+
+//pega o valor dos atrasados de vencimento e soma ao valor total de V.B.
+
+try {
+  // seu código aqui
+
+
+while (document.getElementById("portaria"+i2).value != isNaN){
+	f++;
+			
+	i2++;
+	}
+	
+} catch (error) {
+  // tratamento de erro aqui
+}
+
+
+
+
+
+var macro = '<HAScript name="CAINPROGMA" description="" timeout="60000" pausetime="300" promptall="true" blockinput="false" author="Samuka" creationdate="29/06/2022  \n '+
+'16:11:37" supressclearevents="false" usevars="false" ignorepauseforenhancedtn="true" delayifnotenhancedtn="0" ignorepausetimeforenhancedtn="true">';
+
+try {
+  // seu código aqui
+
+
+while (i <= f){
+
+
+
+		macro +=  '   <screen name="Tela'+i+'1" entryscreen="true" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="'+document.getElementById("siapecad"+i).value+'[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'2" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+' \n '+
+'    <screen name="Tela'+i+'2" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="x[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'3" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+' \n '+
+'    <screen name="Tela'+i+'3" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="[pf5]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'4" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+' \n '+
+'    <screen name="Tela'+i+'4" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="[enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'5" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+' \n '+
+'    <screen name="Tela'+i+'5" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="[pf3]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+i+'6" /> \n '+
+'        </nextscreens> \n '+
+'    </screen> \n '+
+' \n '+
+'    <screen name="Tela'+i+'6" entryscreen="false" exitscreen="false" transient="false"> \n '+
+'        <description > \n '+
+'        </description> \n '+
+'        <actions> \n '+
+'            <input value="[down][enter]" row="0" col="0" movecursor="true" xlatehostkeys="true" encrypted="false" /> \n '+
+'        </actions> \n '+
+'        <nextscreens timeout="0" > \n '+
+'            <nextscreen name="Tela'+(i+1)+'1" /> \n '+
+'        </nextscreens> \n '+
+'    </screen>';
+
+	 i++;
+
+}
+ 
+ } catch (error) {
+  // tratamento de erro aqui
+}
+  
+    
+    macro += '</HAScript>';
+    
+    let texto = macro;
+      let titulo = "CACOPOSPRO";
+   let blob = new Blob([texto], { type: "text/plain;charset=iso-8859-1" });
+      saveAs(blob, titulo + ".mac");
+    
+}
+
+  
+    </script>
+        
+        
+<%= render "layouts/footer" %>
+
+
+  
