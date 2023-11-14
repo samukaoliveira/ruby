@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  registrations: 'users/registrations'
+  # Adicione outros controladores conforme necessário
+}
+
+
   resources :prog_taes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -19,6 +27,10 @@ Rails.application.routes.draw do
   get "calculo" => "calculo#index"
 
   get "autorizar" => "autorizar#index"
+
+  get "usuario" => "devise/session#new"
+
+
 
 
   # Defines the root path route ("/")

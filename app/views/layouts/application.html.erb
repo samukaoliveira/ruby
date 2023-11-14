@@ -16,8 +16,13 @@
 
   </head>
 
+
+
   <body class="container">
-    <%# render "header", layouts: header %>
+  
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+          <%# render "header", layouts: header %>
     <%= yield %>
   </body>
 </html>
