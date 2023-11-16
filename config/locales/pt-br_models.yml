@@ -1,0 +1,7 @@
+"pt-BR":
+  activerecord:
+    models:
+      user: uSUÁRIO
+    attributes:
+      user:
+        login: "Handle"

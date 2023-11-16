@@ -1,4 +1,6 @@
 class ProgTaesController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_prog_tae, only: %i[ show edit update destroy ]
 
   # GET /prog_taes or /prog_taes.json
