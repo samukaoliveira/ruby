@@ -1,0 +1,15 @@
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.0.0/gems/stringio-3.0.9/ext/stringio
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20231117-31644-nw7c65.rb extconf.rb
+creating Makefile
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.0.0/gems/stringio-3.0.9/ext/stringio
+make DESTDIR\= clean
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.0.0/gems/stringio-3.0.9/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.0.0/gems/stringio-3.0.9/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20231117-31644-iy1rge

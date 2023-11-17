@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-
-  devise_for :users, controllers: {
-  sessions: 'users/sessions',
-  registrations: 'users/registrations'
-  # Adicione outros controladores conforme necessário
-}
-
+  devise_for :admins, path: 'admins'
+  devise_for :users, path: 'users'
 
   resources :prog_taes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +10,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "progtae" => "prog_taes#index"
+
+  root "home#index"
 
   get "home" => "home#index"
 
