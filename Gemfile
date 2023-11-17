@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.0.2"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
@@ -37,6 +37,9 @@ gem 'bootstrap', '~> 5.3.2'
 gem 'jquery-rails'
 
 gem "foreman", github: "ddollar/foreman"
+
+#I18n
+gem 'rails-i18n'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

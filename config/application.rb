@@ -27,5 +27,9 @@ module Sepab
         policy.default_src :self, :https
         # Adicione outras diretivas conforme necessário
       end
+
+    config.i18n.default_locale = 'pt-BR'  
+
+
   end
 end

@@ -1,0 +1,19 @@
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+/home/sti/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20231117-139683-q182lx sitelibdir\=./.gem.20231117-139683-q182lx clean
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20231117-139683-q182lx sitelibdir\=./.gem.20231117-139683-q182lx
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20231117-139683-q182lx sitelibdir\=./.gem.20231117-139683-q182lx install
+/usr/bin/install -m 0755 debug.so ./.gem.20231117-139683-q182lx/debug
+
+current directory: /home/sti/Sam/SEPAB/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20231117-139683-q182lx sitelibdir\=./.gem.20231117-139683-q182lx clean
